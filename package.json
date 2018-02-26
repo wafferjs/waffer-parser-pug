@@ -1,6 +1,6 @@
 {
   "name": "waffer-parser-pug",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "pug parser for waffer",
   "main": "index.js",
   "scripts": {
