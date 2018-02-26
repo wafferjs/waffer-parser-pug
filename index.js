@@ -14,7 +14,7 @@ module.exports = server => {
     }
 
     if (exp && !err) {
-      return next(null, require('waffer-parser-html')(server)._export(html, file));
+      return next(null, require('waffer-parser-html')(server)._export(html, file) + '\n');
     }
 
     return next(err, html);
