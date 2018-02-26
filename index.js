@@ -19,6 +19,6 @@ const parse = (file, next, exp, options) => {
   return next(err, html);
 }
 
-module.exports = parser => {
+module.exports = server => {
   return { parse, ext: '.html' }
 }
