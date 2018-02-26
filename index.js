@@ -13,7 +13,7 @@ const parse = (file, next, exp, options) => {
   }
 
   if (exp && !err) {
-    return next(null, require('waffer-parser-html')._export(html, file));
+    return next(null, require('waffer-parser-html')(server)._export(html, file));
   }
 
   return next(err, html);
