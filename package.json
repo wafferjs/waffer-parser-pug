@@ -1,0 +1,23 @@
+{
+  "name": "waffer-parser-pug",
+  "version": "1.0.0",
+  "description": "pug parser for waffer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Casper Seweryn <nya@wvffle.net>",
+  "license": "MIT",
+  "dependencies": {
+    "pug": "^2.0.0-rc.4",
+    "waffer-parser-html": "^1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wafferjs/waffer-parser-pug.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wafferjs/waffer-parser-pug/issues"
+  },
+  "homepage": "https://github.com/wafferjs/waffer-parser-pug#readme"
+}
