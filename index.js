@@ -1,23 +1,18 @@
-const pug = require('pug');
+const fs  = require('fs-extra')
+const pug = require('pug')
 
-const cwd = process.cwd();
+const cwd = process.cwd()
 
 module.exports = server => {
-  const parse = (file, next, exp, options) => {
-    let html;
-    let err;
+  const parse = async (file, exporting = false, options) => {
+    const buf = await fs.readFile(file)
+    const html = pug.render(`${buf}`, options || {});
 
-    try {
-      html = pug.renderFile(file, options || {});
-    } catch (e) {
-      err = e;
+    if (exporting) {
+      return { content: server.parser('.html')._export(html, file) }
     }
 
-    if (exp && !err) {
-      return next(null, require('waffer-parser-html')(server)._export(html, file) + '\n');
-    }
-
-    return next(err, html);
+    return { content: html }
   }
 
   return { parse, ext: '.html' }
