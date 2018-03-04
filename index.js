@@ -9,7 +9,7 @@ module.exports = server => {
     const html = pug.render(`${buf}`, options || {});
 
     if (exporting) {
-      return { content: server.parser('.html')._export(html, file) }
+      return { content: server.parser('.html')._export(html, file, options) + '\n' } 
     }
 
     return { content: html }
